@@ -11,18 +11,6 @@ Mastodon is a free, open-source social network server. A decentralized solution 
 
 An alternative implementation of the GNU social project. Based on [ActivityStreams](https://en.wikipedia.org/wiki/Activity_Streams_(format)), [Webfinger](https://en.wikipedia.org/wiki/WebFinger), [PubsubHubbub](https://en.wikipedia.org/wiki/PubSubHubbub) and [Salmon](https://en.wikipedia.org/wiki/Salmon_(protocol)).
 
-Click on the screenshot to watch a demo of the UI:
-
-[![Screenshot](https://i.imgur.com/T2q5V65.png)][youtube_demo]
-
-[youtube_demo]: https://www.youtube.com/watch?v=YO1jQ8_rAMU
-
-The project focus is a clean REST API and a good user interface. Ruby on Rails is used for the back-end, while React.js and Redux are used for the dynamic front-end. A static front-end for public resources (profiles and statuses) is also provided.
-
-If you would like, you can [support the development of this project on Patreon][patreon]. Alternatively, you can donate to this BTC address: `17j2g7vpgHhLuXhN4bueZFCvdxxieyRVWd`
-
-[patreon]: https://www.patreon.com/user?u=619786
-
 ## Resources
 
 - [List of Mastodon instances](https://github.com/tootsuite/documentation/blob/master/Using-Mastodon/List-of-Mastodon-instances.md)
@@ -31,22 +19,25 @@ If you would like, you can [support the development of this project on Patreon][
 - [Frequently Asked Questions](https://github.com/tootsuite/documentation/blob/master/Using-Mastodon/FAQ.md)
 - [List of apps](https://github.com/tootsuite/documentation/blob/master/Using-Mastodon/Apps.md)
 
-## Features
+## setup
 
-- **Fully interoperable with GNU social and any OStatus platform**
-  Whatever implements Atom feeds, ActivityStreams, Salmon, PubSubHubbub and Webfinger is part of the network
-- **Real-time timeline updates**
-  See the updates of people you're following appear in real-time in the UI via WebSockets
-- **Federated thread resolving**
-  If someone you follow replies to a user unknown to the server, the server fetches the full thread so you can view it without leaving the UI
-- **Media attachments like images and WebM**
-  Upload and view images and WebM videos attached to the updates
-- **OAuth2 and a straightforward REST API**
-  Mastodon acts as an OAuth2 provider so 3rd party apps can use the API, which is RESTful and simple
-- **Background processing for long-running tasks**
-  Mastodon tries to be as fast and responsive as possible, so all long-running tasks that can be delegated to background processing, are
-- **Deployable via Docker**
-  You don't need to mess with dependencies and configuration if you want to try Mastodon, if you have Docker and Docker Compose the deployment is extremely easy
+```
+sidekiq
+```
+
+```
+redis-server start
+```
+
+```
+bin/rails server
+```
+
+## Testing
+
+```
+bin/rspec spec
+```
 
 ## Deployment
 
@@ -62,5 +53,3 @@ You can open issues for bugs you've found or features you think are missing. You
 
 - The [Emoji One](https://github.com/Ranks/emojione) pack has been used for the emojis
 - The error page image courtesy of [Dopatwo](https://www.youtube.com/user/dopatwo)
-
-![Mastodon error image](https://mastodon.social/oops.png)

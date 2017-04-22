@@ -7,8 +7,8 @@
 # For more information, see docs/Running-Mastodon/Administration-guide.md
 #
 defaults: &defaults
-  site_title: 'Mastodon'
-  site_description: ''
+  site_title: 'SanChadoon'
+  site_description: 'SanChadoonとは'
   site_extended_description: ''
   site_contact_username: ''
   site_contact_email: ''
